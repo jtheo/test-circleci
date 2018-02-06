@@ -6,10 +6,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: Install dependecies
+          command: bash set_env.sh
+  
       - run:
-          name: Print the Current Time
-          command: date
-
-
+          name: Test background jobs
+          command: bash dummy.sh
+  
+      - run:
+          name: Show output
+          command: bash show_logs.sh
+  
