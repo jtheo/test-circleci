@@ -1,4 +1,4 @@
 #!/bin/bash
 
 apt-get update
-apt-get instal -y jq curl wget
+apt-get install -y jq curl wget
