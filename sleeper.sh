@@ -23,7 +23,7 @@ do
   sleep ${RND_SLEEP}
   Time="${RND_SLEEP} ${Time}"
 
-  if [[ ${Trap_err} -eq 1 ]]
+  if [[ ${Trap_err} -eq 1 || ${Trap_err} -eq 6 ]]
   then
       msg "You picked the wrong one! Trap::Error: ${Trap_err}"
       ReportTime ${Time}
