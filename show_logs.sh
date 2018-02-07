@@ -34,13 +34,12 @@ then
         else
             msg "Danger Will Robinson!"
             cat ${log}
-            exit 1
         fi
         printf "\n# ---------------------------------------------# "
         printf "\n\n"
        
     done
-
+    exit 1
 else
     msg "No Logs for ${check_for} logs. Lucky Bastard"
 fi
