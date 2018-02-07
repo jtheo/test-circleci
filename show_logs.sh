@@ -35,7 +35,7 @@ then
             msg "Danger Will Robinson!"
             cat ${log}; echo ""
         fi
-        printf "\n# ---------------------------------------------# "
+        printf "\n${LINE} "
         printf "\n\n"
        
     done
