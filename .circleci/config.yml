@@ -11,7 +11,7 @@ jobs:
   
       - run:
           name: Test background jobs
-          command: bash dummy.sh
+          command: time bash dummy.sh
   
       - run:
           name: Show output
