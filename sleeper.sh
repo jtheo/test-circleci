@@ -32,4 +32,4 @@ do
 done
 
 ReportTime ${Time}
-(>&2 echo "Process: $! completed!")
+(>&2 echo "Process: $$ completed!")

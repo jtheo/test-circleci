@@ -9,4 +9,4 @@ do
   t=$(( ${t} + ${work_time} ))
 done
 
-msg "Total time would be: $t"
+msg "Total time that would have lasted in a sequential execution: $t seconds "
