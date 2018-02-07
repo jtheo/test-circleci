@@ -19,12 +19,14 @@ function ReportTime(){
 
 for useless in {1..5}
 do
-  curl -s https://randomuser.me/api/
+  curl -s https://randomuser.me/api/                  # < - this will be the "real" payload, 
+                                                      #     in our case it would be ./terraform.sh
   RND_SLEEP=$(( ($RANDOM % 10) + 1 ))
   sleep ${RND_SLEEP}
   Time="${RND_SLEEP} ${Time}"
   echo ""
-  if [[ ${Trap_err} -eq 1 || ${Trap_err} -eq 6 ]]
+  if [[ ${Trap_err} -eq 1 || ${Trap_err} -eq 6 ]]     # < - this is a fake condition to emulate 
+                                                      #     when we catch an error 
   then
       msg "You picked the wrong one! Trap::Error: ${Trap_err}"
       ReportTime ${Time}
@@ -33,4 +35,5 @@ do
 done
 
 ReportTime ${Time}
-(>&2 echo "Process: $$ - Step: ${step} completed!")
+(>&2 echo "Process: $$ - Step: ${step} completed!")  # I log to stdout but I need this in stderr 
+                                                     # so that it can be displayed in circleci output
