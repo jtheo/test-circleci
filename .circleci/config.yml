@@ -14,6 +14,13 @@ jobs:
           command: time bash dummy.sh
   
       - run:
-          name: Show output
-          command: bash show_logs.sh
-  
+          name: Show output Warn Logs
+          command: bash show_logs.sh Warn
+    
+      - run:
+          name: Show output Err Logs
+          command: bash show_logs.sh Warn
+
+      - run:
+          name: Show output Ok Logs
+          command: bash show_logs.sh Warn
