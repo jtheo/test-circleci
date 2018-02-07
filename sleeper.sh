@@ -22,10 +22,10 @@ do
   RND_SLEEP=$(( ($RANDOM % 10) + 1 ))
   sleep ${RND_SLEEP}
   Time="${RND_SLEEP} ${Time}"
-
+  echo ""
   if [[ ${Trap_err} -eq 1 || ${Trap_err} -eq 6 ]]
   then
-      msg "\nYou picked the wrong one! Trap::Error: ${Trap_err}"
+      msg "You picked the wrong one! Trap::Error: ${Trap_err}"
       ReportTime ${Time}
       exit 1
   fi
