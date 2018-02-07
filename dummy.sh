@@ -19,10 +19,3 @@ do
 done
 
 wait
-
-for log in ${LOG_DIR}/*
-do
-    msg "Log: ${log}"
-    cat ${log}
-    echo ""
-done
