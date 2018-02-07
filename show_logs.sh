@@ -34,10 +34,11 @@ then
         else
             msg "Danger Will Robinson!"
             cat ${log}
+            exit 1
         fi
         printf "\n# ---------------------------------------------# "
         printf "\n\n"
-
+       
     done
 
 else
