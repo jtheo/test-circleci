@@ -1,19 +1,26 @@
-#!/bin/bash
-# Dummy script
+#!/bin/bash -e
+# Dummy script to show the output
 
-LOG_DIR=.logs
-
-function msg(){
-    echo "# ---------------------------------------------# "
-    echo "# $1 "
-    echo "# ---------------------------------------------# "
-}
-
+. include.sh
 
 for log in ${LOG_DIR}/*
 do
     msg "Log: ${log}"
     cat ${log} | jq .
-    echo "# ---------------------------------------------# "
+    ERROR_MSG=$(grep ":Error:" ${log})
+    if [[ $? -ne 0 ]]
+    then
+        msg "Danger Will Robinson!\n ${ERROR_MSG}"
+    fi
+    printf "\n# ---------------------------------------------# "
     printf "\n\n"
 done
+
+t=0
+for l in .logs/*
+do 
+  work_time=$(grep "^# Sleep timing:" $l | sed 's/# Sleep timing: .* - Sum: \([0-9]*\)/\1/')
+  t=$(( ${t} +  ))
+done
+
+msg "Total time would be: $t"

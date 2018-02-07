@@ -1,21 +1,19 @@
-#!/bin/bash
+#!/bin/bash -e
 # Dummy script
 
-LOG_DIR=.logs
+. include.sh
+trap "kill 0" EXIT
+trap "exit" INT TERM ERR
 
-function msg(){
-    echo "# ---------------------------------------------# "
-    echo "# $1 "
-    echo "# ---------------------------------------------# "
-}
 
-mkdir ${LOG_DIR}
+mkdir -p ${LOG_DIR}
 
 for step in dev prod stg infra legacy
 do
-  SLEEP=$(( ( $RANDOM % 20 )  + 1 ))
-  msg "Launching Step ${step}: ${SLEEP}"
-  bash sleeper > ${LOG_DIR}/${step}.log &
+  Trap_err=$(( ( $RANDOM % 10 )  + 1 ))
+  msg "Launching Step ${step}: ${Trap_err}"
+  bash sleeper.sh ${Trap_err} > ${LOG_DIR}/${step}.log &
 done
 
+msg "Jobs:\n$(jobs -l)"
 wait
