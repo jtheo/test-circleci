@@ -13,7 +13,8 @@ jobs:
           name: Test background jobs
           command: time bash dummy.sh
 
-      - run: Report Time Execution
+      - run: 
+          name: Report Time Execution
           command: bash report.sh
   
       - run:
