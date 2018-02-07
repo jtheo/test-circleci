@@ -2,8 +2,8 @@
 # Dummy script
 
 . include.sh
-trap "kill 0" EXIT
-#trap "exit" INT TERM ERR
+# trap "kill 0" EXIT
+# trap "exit" INT TERM ERR
 
 
 mkdir -p ${LOG_DIR}
