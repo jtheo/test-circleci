@@ -12,15 +12,18 @@ jobs:
       - run:
           name: Test background jobs
           command: time bash dummy.sh
+
+      - run: Report Time Execution
+          command: bash report.sh
   
       - run:
-          name: Show output Warn Logs
-          command: bash show_logs.sh Warn
+          name: Show output Err Logs
+          command: bash show_logs.sh Err
     
       - run:
-          name: Show output Err Logs
+          name: Show output Warn Logs
           command: bash show_logs.sh Warn
 
       - run:
           name: Show output Ok Logs
-          command: bash show_logs.sh Warn
+          command: bash show_logs.sh Ok
