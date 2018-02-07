@@ -33,7 +33,7 @@ then
             cat ${log} | jq .
         else
             msg "Danger Will Robinson!"
-            cat ${log}
+            cat ${log}; echo ""
         fi
         printf "\n# ---------------------------------------------# "
         printf "\n\n"
