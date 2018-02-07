@@ -12,7 +12,7 @@ do
   bash sleeper.sh ${Trap_err} > ${LOG_DIR}/${step}.log &
 done
 
-msg "Jobs:\n$(jobs -l)"
+msg "Jobs:\n$(jobs -p | while read p; do ps -fp $p | tail -n+2;done)"
 msg "Waiting for completion..."
 wait
 msg "Done!"
