@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 # Pretend to do something clever
 
 . include.sh

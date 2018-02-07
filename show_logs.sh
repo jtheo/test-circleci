@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 # Dummy script to show the output
 
 . include.sh
