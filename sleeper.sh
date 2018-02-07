@@ -16,7 +16,7 @@ function ReportTime(){
     msg "Sleep timing: ${Time} - Sum: ${Sum_Sleep}"
 }
 
-time for useless in {1..5}
+for useless in {1..5}
 do
   curl -s https://randomuser.me/api/ | jq .
   RND_SLEEP=$(( ($RANDOM % 10) + 1 ))
@@ -32,3 +32,4 @@ do
 done
 
 ReportTime ${Time}
+echo "Process: $! completed!"
