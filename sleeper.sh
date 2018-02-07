@@ -3,6 +3,7 @@
 
 . include.sh
 Trap_err=$1
+step=$2
 Time=""
 Mark_Error=0
 
@@ -32,4 +33,4 @@ do
 done
 
 ReportTime ${Time}
-(>&2 echo "Process: $$ completed!")
+(>&2 echo "Process: $$ - Step: ${step} completed!")
