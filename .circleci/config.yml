@@ -3,28 +3,34 @@ jobs:
   build:
     docker:
       - image: debian:stretch
+    environment:
+      DEPLOY_IN_MASTER: 1
     steps:
       - checkout
       - run:
-          name: Install dependecies
-          command: bash set_env.sh
+            name: test pub variables
+            command: echo "DEPLOY_IN_MASTER => ${DEPLOY_IN_MASTER} <="
 
-      - run:
-          name: Test background jobs
-          command: time bash dummy.sh
+      # - run:
+      #     name: Install dependecies
+      #     command: bash set_env.sh
 
-      - run:
-          name: Report Time Execution
-          command: bash report.sh
+      # - run:
+      #     name: Test background jobs
+      #     command: time bash dummy.sh
 
-      - run:
-          name: Show output Err Logs
-          command: bash show_logs.sh Err
+      # - run:
+      #     name: Report Time Execution
+      #     command: bash report.sh
 
-      - run:
-          name: Show output Warn Logs
-          command: bash show_logs.sh Warn
+      # - run:
+      #     name: Show output Err Logs
+      #     command: bash show_logs.sh Err
 
-      - run:
-          name: Show output Ok Logs
-          command: bash show_logs.sh Ok
+      # - run:
+      #     name: Show output Warn Logs
+      #     command: bash show_logs.sh Warn
+
+      # - run:
+      #     name: Show output Ok Logs
+      #     command: bash show_logs.sh Ok
