@@ -6,7 +6,7 @@ jobs:
     environment:
       DEPLOY_IN_MASTER: 1
     steps:
-      - checkout
+      #- checkout
       - run:
             name: test pub variables
             command: echo "DEPLOY_IN_MASTER => ${DEPLOY_IN_MASTER} <="
