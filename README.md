@@ -13,3 +13,7 @@ When all the background jobs completed their tasks, there's a script that shows 
 
 After that, it'll be called in sequence a script to check if there's an error in one or more of the logs and it'll show stopping the circleci pipeline otherwise it'll show the output of the successful tasks.
 
+The output:
+![successful part](https://raw.githubusercontent.com/jtheo/test-circleci/master/img/circleci_1.png)
+![unsuccessful part](https://raw.githubusercontent.com/jtheo/test-circleci/master/img/circleci_2.png)
+
