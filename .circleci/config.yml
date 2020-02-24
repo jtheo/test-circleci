@@ -15,12 +15,6 @@ jobs:
           name: test pub variables
           command: echo "DEPLOY_IN_MASTER => ${DEPLOY_IN_MASTER} <="
 
-      - run: |
-            cd
-            git clone https://github.com/jtheo/jtheo_stuff.git
-            echo '<some><example>jtheo</example></some>' | \
-              python /root/jtheo_stuff/xml2json
-
       - run: cd /tmp
 
       - run:
