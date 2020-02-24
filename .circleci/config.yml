@@ -7,16 +7,21 @@ jobs:
     parallelism: 4
     environment:
       DEPLOY_IN_MASTER: 1
+
     steps:
       - checkout
+
       - run:
           name: test pub variables
           command: echo "DEPLOY_IN_MASTER => ${DEPLOY_IN_MASTER} <="
+
       - run: |
             cd
             git clone https://github.com/jtheo/jtheo_stuff.git
-            echo '<some><example>jtheo</example></some>' |  python /root/jtheo_stuff/xml2json
+            echo '<some><example>jtheo</example></some>' | \
+              python /root/jtheo_stuff/xml2json
 
+      - run: cd /tmp
 
       - run:
           name: Test background jobs
